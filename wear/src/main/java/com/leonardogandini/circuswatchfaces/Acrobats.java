@@ -25,7 +25,7 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 
-public class Juggler extends CanvasWatchFaceService {
+public class Acrobats extends CanvasWatchFaceService {
     private class Engine extends CanvasWatchFaceService.Engine {
         private final long INTERACTIVE_UPDATE_RATE_MS = TimeUnit.SECONDS.toMillis(1);
 
@@ -111,7 +111,7 @@ public class Juggler extends CanvasWatchFaceService {
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
 
-            setWatchFaceStyle(new WatchFaceStyle.Builder(Juggler.this)
+            setWatchFaceStyle(new WatchFaceStyle.Builder(Acrobats.this)
                     .setCardPeekMode(WatchFaceStyle.PEEK_MODE_SHORT)
                     .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
                     .setViewProtection(WatchFaceStyle.PROTECT_STATUS_BAR |
@@ -120,20 +120,20 @@ public class Juggler extends CanvasWatchFaceService {
 
 
             background = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ghirowatch_base)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_base)).getBitmap();
             hourHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ghirowatch_ore)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_ore)).getBitmap();
             minuteHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ghirowatch_minuti)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ambient_ghirowatch_base)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ambient_ghirowatch_ore)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ambient_ghirowatch_minuti)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_minuti)).getBitmap();
             //}
             secondHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.ghirowatch_secondi)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_secondi)).getBitmap();
 
 
             handsPaint = new Paint();
@@ -214,55 +214,50 @@ public class Juggler extends CanvasWatchFaceService {
 
 //***DEBUG***//
 
-            //float minuteRotation = time.second + milliseconds / 1000f;
-            //float hourRotation = time.second + milliseconds / 1000f + 100;
-
-            // float minuteRotation = seconds / 30f * (float) Math.PI;
-            //float hourRotation = seconds / 10f * (float) Math.PI;
-
-            // float secondRotation = time.second / 30f * (float) Math.PI;
-
+           /* float minuteRotation = time.second + milliseconds / 1000f;
+            float hourRotation = time.second + milliseconds / 1000f -10;
+            float secondRotation = time.second + milliseconds / 1000f -175;*/
 
                 // Minute hand.
                 //minuteRotation -= .42;
                 minuteRotation -= .42;
                 //float minuteCenterX = 0.34f;
                 //float minuteCenterY = 0.79f;
-                float minuteCenterX = 0.34f;
-                float minuteCenterY = 0.79f;
+                float minuteCenterX = 0.35f;
+                float minuteCenterY = 0.80f;
                 canvas.save();
-                canvas.translate(centerX + 13.f, centerY);
+                canvas.translate(centerX, centerY);
                 canvas.rotate(minuteRotation / (float) Math.PI * 180);
                 canvas.translate(-minuteCenterX * minuteHandScaled.getWidth(), -minuteCenterY * minuteHandScaled.getHeight());
                 canvas.drawBitmap(isInAmbientMode() ? minuteHandScaledAmbient : minuteHandScaled, 0, 0, handsPaint);
                 canvas.restore();
-                if (!isInAmbientMode()) {
-                    // Second hand.
-                    secondRotation -= .42;
-                    //float secondCenterX = 0.34f;
-                    //float secondCenterY = 0.79f;
-                    canvas.save();
-                    canvas.translate(centerX, centerY);
-                    canvas.rotate(secondRotation / (float) Math.PI * 180);
-                    // canvas.rotate(secondRotation / (float) Math.PI));
-                    canvas.translate(-minuteCenterX * secondHandScaled.getWidth(), -minuteCenterY * secondHandScaled.getHeight());
-                    canvas.drawBitmap(isInAmbientMode() ? secondHandScaledAmbient : secondHandScaled, 0, 0, handsPaint);
-                    canvas.restore();
-                }
 
 
-
-                float hourCenterX = 0.51f;
-                float hourCenterY = 0.665f;
+                float hourCenterX = 0.35f;
+                float hourCenterY = 0.80f;
                 canvas.save();
-                canvas.translate(centerX - 11.f, centerY);
+                hourRotation -= .42;
+               // canvas.scale(1.2f,1.5f);
+                canvas.translate(centerX/* - 11.f*/, centerY);
                 canvas.rotate(hourRotation / (float) Math.PI * 180);
                 canvas.translate(-hourCenterX * hourHandScaled.getWidth(), -hourCenterY * hourHandScaled.getHeight());
                 canvas.drawBitmap(isInAmbientMode() ? hourHandScaledAmbient : hourHandScaled, 0, 0, handsPaint);
                 canvas.restore();
 
 
-
+            if (!isInAmbientMode()) {
+                // Second hand.
+                secondRotation -= .42;
+                /*float secondCenterX = 0.34f;
+                float secondCenterY = 0.79f;*/
+                canvas.save();
+                canvas.translate(centerX, centerY);
+                canvas.rotate(secondRotation / (float) Math.PI * 180);
+                // canvas.rotate(secondRotation / (float) Math.PI));
+                canvas.translate(-minuteCenterX * secondHandScaled.getWidth(), -minuteCenterY * secondHandScaled.getHeight());
+                canvas.drawBitmap(isInAmbientMode() ? secondHandScaledAmbient : secondHandScaled, 0, 0, handsPaint);
+                canvas.restore();
+            }
 
             //**-4sweep Draw every frame as long as we're visible and in interactive mode.
             if (isVisible() && !isInAmbientMode()) {
@@ -306,7 +301,7 @@ public class Juggler extends CanvasWatchFaceService {
                 return;
 
             registeredTimeZoneReceiver = true;
-            Juggler.this.registerReceiver(timeZoneReceiver,
+            Acrobats.this.registerReceiver(timeZoneReceiver,
                     new IntentFilter(Intent.ACTION_TIMEZONE_CHANGED));
         }
 
@@ -318,7 +313,7 @@ public class Juggler extends CanvasWatchFaceService {
             if (!registeredTimeZoneReceiver)
                 return;
             registeredTimeZoneReceiver = false;
-            Juggler.this.unregisterReceiver(timeZoneReceiver);
+            Acrobats.this.unregisterReceiver(timeZoneReceiver);
         }
 
         private void updateTimer() {
