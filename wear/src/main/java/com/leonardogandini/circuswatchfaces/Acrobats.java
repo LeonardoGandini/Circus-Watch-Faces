@@ -126,12 +126,11 @@ public class Acrobats extends CanvasWatchFaceService {
             minuteHand = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.acrobats_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.acrobats_base)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.acrobats_ore)).getBitmap();
+                    getResources().getDrawable(R.drawable.acrobats_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.acrobats_minuti)).getBitmap();
-            //}
+                    getResources().getDrawable(R.drawable.acrobats_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.acrobats_secondi)).getBitmap();
 
