@@ -1,29 +1,44 @@
 package com.leonardogandini.circuswatchfaces;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+        import android.support.v7.app.ActionBarActivity;
+        import android.os.Bundle;
+        import android.view.Menu;
+        import android.view.MenuItem;
 
+        import android.content.Intent;
+        import android.net.Uri;
+        import android.view.View;
+        import android.widget.Button;
+
+        import com.google.android.gms.ads.AdRequest;
+        import com.google.android.gms.ads.AdView;
 
 public class CircusMain extends ActionBarActivity {
+
+    public void buttonOnClick(View v){
+        Uri uri = Uri.parse("http://tamrielma.ps");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circus_main);
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
-
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_circus_main, menu);
+        getMenuInflater().inflate(R.menu.menu_CircusMain, menu);
         return true;
-    }
+    }*/
 
-
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -36,5 +51,11 @@ public class CircusMain extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
+
+
+
+
+
+
 }
