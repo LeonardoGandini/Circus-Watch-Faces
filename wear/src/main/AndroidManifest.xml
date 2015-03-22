@@ -76,6 +76,27 @@ package="com.leonardogandini.circuswatchfaces">
             <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
         </intent-filter>
     </service>
+    <service
+        android:name="com.leonardogandini.circuswatchfaces.Seal"
+        android:allowEmbedded="true"
+        android:label="@string/seal_name"
+        android:permission="android.permission.BIND_WALLPAPER"
+        android:taskAffinity="">
+
+        <meta-data
+            android:name="android.service.wallpaper"
+            android:resource="@xml/watch_face"/>
+        <meta-data
+            android:name="com.google.android.wearable.watchface.preview"
+            android:resource="@drawable/seal_base"/>
+        <meta-data
+            android:name="com.google.android.clockwork.home.preview_circular"
+            android:resource="@drawable/seal_base"/>
+        <intent-filter>
+            <action android:name="android.service.wallpaper.WallpaperService"/>
+            <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
+        </intent-filter>
+    </service>
     <meta-data
         android:name="com.google.android.gms.version"
         android:value="@integer/google_play_services_version"/>

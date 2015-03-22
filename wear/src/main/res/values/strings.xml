@@ -3,4 +3,6 @@
     <string name="acrobat_name">Acrobats</string>
     <string name="juggler_name">Juggler</string>
     <string name="equilibrist_name">Equilibrist</string>
+    <string name="seal_name">Seal</string>
+    <string name="elephant_name">Elephant</string>
 </resources>
