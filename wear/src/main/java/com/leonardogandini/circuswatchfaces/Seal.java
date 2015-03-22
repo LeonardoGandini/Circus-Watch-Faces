@@ -126,11 +126,11 @@ public class Seal extends CanvasWatchFaceService {
             minuteHand = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.seal_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ambient_base)).getBitmap();
+                    getResources().getDrawable(R.drawable.seal_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ambient_ore)).getBitmap();
+                    getResources().getDrawable(R.drawable.seal_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ambient_minuti)).getBitmap();
+                    getResources().getDrawable(R.drawable.seal_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.seal_secondi)).getBitmap();
 
@@ -203,17 +203,17 @@ public class Seal extends CanvasWatchFaceService {
             float centerY = height / 2f;
 
 
-           /* float minuteRotation = time.minute / 30f * (float) Math.PI;
+            float minuteRotation = time.minute / 30f * (float) Math.PI;
             float hourRotation = ((time.hour + time.minute / 60f) / 6f) * (float) Math.PI;
 
             float seconds = time.second + milliseconds / 1000f;
-            float secondRotation = seconds / 30f * (float) Math.PI;*/
+            float secondRotation = seconds / 30f * (float) Math.PI;
 
 //***DEBUG***//
 
-            float minuteRotation = time.second + milliseconds / 1000f;
+           /* float minuteRotation = time.second + milliseconds / 1000f;
             float hourRotation = time.second + milliseconds / 1000f -10;
-            float secondRotation = time.second + milliseconds / 1000f -175;
+            float secondRotation = time.second + milliseconds / 1000f -175;*/
 
             // Minute hand.
             //minuteRotation -= .42;
@@ -245,13 +245,13 @@ public class Seal extends CanvasWatchFaceService {
             if (!isInAmbientMode()) {
                 // Second hand.
                 secondRotation -= .42;
-                /*float secondCenterX = 0.34f;
-                float secondCenterY = 0.79f;*/
+                float secondCenterX = 0.40f;
+                float secondCenterY = 0.75f;
                 canvas.save();
                 canvas.translate(centerX, centerY);
                 canvas.rotate(secondRotation / (float) Math.PI * 180);
                 // canvas.rotate(secondRotation / (float) Math.PI));
-                canvas.translate(-minuteCenterX * secondHandScaled.getWidth(), -minuteCenterY * secondHandScaled.getHeight());
+                canvas.translate(-secondCenterX * secondHandScaled.getWidth(), -secondCenterY * secondHandScaled.getHeight());
                 canvas.drawBitmap(isInAmbientMode() ? secondHandScaledAmbient : secondHandScaled, 0, 0, handsPaint);
                 canvas.restore();
             }
