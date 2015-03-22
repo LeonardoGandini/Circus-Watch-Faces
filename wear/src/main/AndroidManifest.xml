@@ -25,10 +25,10 @@ package="com.leonardogandini.circuswatchfaces">
             android:resource="@xml/watch_face"/>
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
-            android:resource="@drawable/acrobats_base"/>
+            android:resource="@drawable/acrobats_screen"/>
         <meta-data
             android:name="com.google.android.clockwork.home.preview_circular"
-            android:resource="@drawable/acrobats_base"/>
+            android:resource="@drawable/acrobats_screen"/>
         <intent-filter>
             <action android:name="android.service.wallpaper.WallpaperService"/>
             <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
@@ -46,10 +46,10 @@ package="com.leonardogandini.circuswatchfaces">
             android:resource="@xml/watch_face"/>
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
-            android:resource="@drawable/juggler_base"/>
+            android:resource="@drawable/juggler_screen"/>
         <meta-data
             android:name="com.google.android.clockwork.home.preview_circular"
-            android:resource="@drawable/juggler_base"/>
+            android:resource="@drawable/juggler_screen"/>
         <intent-filter>
             <action android:name="android.service.wallpaper.WallpaperService"/>
             <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
@@ -67,10 +67,10 @@ package="com.leonardogandini.circuswatchfaces">
             android:resource="@xml/watch_face"/>
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
-            android:resource="@drawable/equilibrist_base"/>
+            android:resource="@drawable/equilibrist_screen"/>
         <meta-data
             android:name="com.google.android.clockwork.home.preview_circular"
-            android:resource="@drawable/equilibrist_base"/>
+            android:resource="@drawable/equilibrist_screen"/>
         <intent-filter>
             <action android:name="android.service.wallpaper.WallpaperService"/>
             <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
@@ -88,10 +88,10 @@ package="com.leonardogandini.circuswatchfaces">
             android:resource="@xml/watch_face"/>
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
-            android:resource="@drawable/seal_base"/>
+            android:resource="@drawable/seal_screen"/>
         <meta-data
             android:name="com.google.android.clockwork.home.preview_circular"
-            android:resource="@drawable/seal_base"/>
+            android:resource="@drawable/seal_screen"/>
         <intent-filter>
             <action android:name="android.service.wallpaper.WallpaperService"/>
             <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
@@ -100,7 +100,7 @@ package="com.leonardogandini.circuswatchfaces">
     <service
         android:name="com.leonardogandini.circuswatchfaces.Elephant"
         android:allowEmbedded="true"
-        android:label="@string/seal_name"
+        android:label="@string/elephant_name"
         android:permission="android.permission.BIND_WALLPAPER"
         android:taskAffinity="">
 
@@ -109,10 +109,10 @@ package="com.leonardogandini.circuswatchfaces">
             android:resource="@xml/watch_face"/>
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
-            android:resource="@drawable/elephant_base"/>
+            android:resource="@drawable/elephant_screen"/>
         <meta-data
             android:name="com.google.android.clockwork.home.preview_circular"
-            android:resource="@drawable/elephant_base"/>
+            android:resource="@drawable/elephant_screen"/>
         <intent-filter>
             <action android:name="android.service.wallpaper.WallpaperService"/>
             <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
