@@ -128,9 +128,9 @@ public class Juggler extends CanvasWatchFaceService {
             backgroundAmbient = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.juggler_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.acrobats_ambient_ore)).getBitmap();
+                    getResources().getDrawable(R.drawable.juggler_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.acrobats_ambient_minuti)).getBitmap();
+                    getResources().getDrawable(R.drawable.juggler_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.juggler_secondi)).getBitmap();
 
@@ -202,18 +202,18 @@ public class Juggler extends CanvasWatchFaceService {
             float centerX = width / 2f;
             float centerY = height / 2f;
 
-/*
+
             float minuteRotation = time.minute / 30f * (float) Math.PI;
             float hourRotation = ((time.hour + time.minute / 60f) / 6f) * (float) Math.PI;
 
             float seconds = time.second + milliseconds / 1000f;
-            float secondRotation = seconds / 30f * (float) Math.PI;*/
+            float secondRotation = seconds / 30f * (float) Math.PI;
 
 //***DEBUG***//
 
-            float minuteRotation = time.second + milliseconds / 1000f;
+           /* float minuteRotation = time.second + milliseconds / 1000f;
             float hourRotation = time.second + milliseconds / 1000f -10;
-            float secondRotation = time.second + milliseconds / 1000f -175;
+            float secondRotation = time.second + milliseconds / 1000f -175;*/
 
             // Minute hand.
             //minuteRotation -= .42;
