@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Circus Watch Faces</string>
-    <string name="acrobat_name">Acrobats</string>
-    <string name="juggler_name">Juggler</string>
-    <string name="equilibrist_name">Equilibrist</string>
-    <string name="seal_name">Seal</string>
-    <string name="elephant_name">Elephant</string>
+    <string name="acrobat_name">Circus Acrobats</string>
+    <string name="juggler_name">Circus Juggler</string>
+    <string name="equilibrist_name">Circus Equilibrist</string>
+    <string name="seal_name">Circus Seal</string>
+    <string name="elephant_name">Circus Elephant</string>
 </resources>
