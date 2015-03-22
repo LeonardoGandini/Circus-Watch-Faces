@@ -21,21 +21,9 @@
         android:background="@color/background_material_light"
         android:nestedScrollingEnabled="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/app_name"
-            android:id="@+id/textView"
-            android:textColor="#ffff0342"
-            android:layout_below="@+id/imageView"
-            android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3"
-            android:paddingTop="5dp" />
-
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:id="@+id/imageView"
             android:src="@drawable/ic_launcher"
             android:layout_alignParentTop="true"
@@ -45,18 +33,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="There's nothing here, go back to your smartwatch in order to enjoy it!\n\nThis app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it. "
+            android:text="This app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it.\n\nRealized by Leonardo Gandini, drawings and original design by Roberta Pagnoni"
             android:id="@+id/textView2"
             android:textColor="#ff000000"
-            android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/imageView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Want to view more?"
+            android:text="Want to know more?"
             android:id="@+id/textView3"
             android:textColor="#ffe8b800"
             android:textSize="22dp"
