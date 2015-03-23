@@ -129,7 +129,7 @@ public class Acrobats extends CanvasWatchFaceService {
 
             handsPaint = new Paint();
             handsPaint.setFilterBitmap(true);
-            handsPaint.setAntiAlias(true);
+            handsPaint.setAntiAlias(false);
 
             time = new Time();
 
@@ -139,8 +139,10 @@ public class Acrobats extends CanvasWatchFaceService {
         public void onDestroy() {
 
             updateTimeHandler.removeMessages(MSG_UPDATE_TIME);
+           updateTimeHandler.removeCallbacksAndMessages(null);
+            updateTimeHandler.removeCallbacksAndMessages(MSG_UPDATE_TIME);
             super.onDestroy();
-            this.updateTimeHandler.removeCallbacksAndMessages(null);
+
     }
         @Override
         public void onDraw(Canvas canvas, Rect bounds) {
@@ -251,9 +253,9 @@ public class Acrobats extends CanvasWatchFaceService {
             }
 
             //**-4sweep Draw every frame as long as we're visible and in interactive mode.
-            if (isVisible() && !isInAmbientMode()) {
+          /*  if (isVisible() && !isInAmbientMode()) {
                 invalidate();
-            }
+            }*/
         }
 
         @Override

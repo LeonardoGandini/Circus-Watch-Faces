@@ -118,7 +118,7 @@ public class Equilibrist extends CanvasWatchFaceService {
                             WatchFaceStyle.PROTECT_HOTWORD_INDICATOR)
                     .build());
 
-
+            System.gc();
             background = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.equilibrist_base)).getBitmap();
             hourHand = ((BitmapDrawable)
@@ -137,7 +137,7 @@ public class Equilibrist extends CanvasWatchFaceService {
 
             handsPaint = new Paint();
             handsPaint.setFilterBitmap(true);
-            handsPaint.setAntiAlias(true);
+            handsPaint.setAntiAlias(false);
 
             time = new Time();
 

@@ -118,7 +118,7 @@ public class Elephant extends CanvasWatchFaceService {
                             WatchFaceStyle.PROTECT_HOTWORD_INDICATOR)
                     .build());
 
-
+            System.gc();
             background = ((BitmapDrawable)
                     getResources().getDrawable(R.drawable.elephant_base)).getBitmap();
             hourHand = ((BitmapDrawable)
@@ -137,7 +137,7 @@ public class Elephant extends CanvasWatchFaceService {
 
             handsPaint = new Paint();
             handsPaint.setFilterBitmap(true);
-            handsPaint.setAntiAlias(true);
+            handsPaint.setAntiAlias(false);
 
             time = new Time();
 
@@ -147,7 +147,10 @@ public class Elephant extends CanvasWatchFaceService {
         public void onDestroy() {
 
             updateTimeHandler.removeMessages(MSG_UPDATE_TIME);
+            updateTimeHandler.removeCallbacksAndMessages(null);
+            updateTimeHandler.removeCallbacksAndMessages(MSG_UPDATE_TIME);
             super.onDestroy();
+
         }
 
         @Override

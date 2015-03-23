@@ -147,7 +147,10 @@ public class Seal extends CanvasWatchFaceService {
         public void onDestroy() {
 
             updateTimeHandler.removeMessages(MSG_UPDATE_TIME);
+            updateTimeHandler.removeCallbacksAndMessages(null);
+            updateTimeHandler.removeCallbacksAndMessages(MSG_UPDATE_TIME);
             super.onDestroy();
+
         }
 
         @Override
