@@ -85,31 +85,6 @@ public class Acrobats extends CanvasWatchFaceService {
         };
 
 
-        /**
-         * Instances of static inner classes do not hold an implicit
-         * reference to their outer class.
-         */
-        private static class MyHandler extends Handler {
-            private final WeakReference<SampleActivity> mActivity;
-
-            public MyHandler(Acrobats activity) {
-                mActivity = new WeakReference<SampleActivity>(activity);
-            }
-
-            @Override
-            public void handleMessage(Message msg) {
-                Acrobats activity = mActivity.get();
-                if (activity != null) {
-                    // ...
-                }
-            }
-        }
-
-        private final MyHandler mHandler = new MyHandler(this);
-
-
-
-
 
 
 
@@ -165,24 +140,7 @@ public class Acrobats extends CanvasWatchFaceService {
 
             updateTimeHandler.removeMessages(MSG_UPDATE_TIME);
             super.onDestroy();
-/*
-            unbindDrawables(findViewById(R.id.RootView));
-            System.gc();
-
-
-        private void unbindDrawables(View view) {
-            if (view.getBackground() != null) {
-                view.getBackground().setCallback(null);
-            }
-            if (view instanceof ViewGroup) {
-                for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-                    unbindDrawables(((ViewGroup) view).getChildAt(i));
-                }
-                ((ViewGroup) view).removeAllViews();
-            }
-
-
-        }*/
+            this.updateTimeHandler.removeCallbacksAndMessages(null);
     }
         @Override
         public void onDraw(Canvas canvas, Rect bounds) {
