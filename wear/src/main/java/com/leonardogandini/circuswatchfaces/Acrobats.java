@@ -65,23 +65,7 @@ public class Acrobats extends CanvasWatchFaceService {
 
 
 
-        /*final Handler updateTimeHandler = new Handler() {
-            @Override
-            public void handleMessage(Message message) {
-                if (message.what != MSG_UPDATE_TIME)
-                    return;
-                invalidate();
-                if (!timerShouldBeRunning())
-                    return;
-                long updateRate = TimeUnit.SECONDS.toMillis(3);
-                long timeMs = System.currentTimeMillis();
-                long delayMs = updateRate - (timeMs % updateRate);
-                updateTimeHandler.sendEmptyMessageDelayed(MSG_UPDATE_TIME, delayMs);
-            }
-        };*/
-
         /* handler to update the time once a second in interactive mode */
-
        private Handler updateTimeHandler = new Handler() {
             @Override
             public void handleMessage(Message message) {
@@ -101,70 +85,29 @@ public class Acrobats extends CanvasWatchFaceService {
         };
 
 
+        /**
+         * Instances of static inner classes do not hold an implicit
+         * reference to their outer class.
+         */
+        private static class MyHandler extends Handler {
+            private final WeakReference<SampleActivity> mActivity;
 
-
-
-
-        /*private IStaticHandler updateTimeHandler = new IStaticHandler() {
+            public MyHandler(Acrobats activity) {
+                mActivity = new WeakReference<SampleActivity>(activity);
+            }
 
             @Override
-            public void handleMessage(Message message) {
-                switch (message.what) {
-                    case MSG_UPDATE_TIME:
-                        invalidate();
-                        if (timerShouldBeRunning()) {
-                            long timeMs = System.currentTimeMillis();
-                            long delayMs = INTERACTIVE_UPDATE_RATE_MS - (timeMs % INTERACTIVE_UPDATE_RATE_MS);
-                            updateTimeHandler.sendEmptyMessageDelayed(MSG_UPDATE_TIME, delayMs);
-                        }
-                        break;
+            public void handleMessage(Message msg) {
+                Acrobats activity = mActivity.get();
+                if (activity != null) {
+                    // ...
                 }
             }
-
-        };
-
-        public void newHandler() {
-            // Initialize from factory class
-            //IStaticHandler newHandler;
-            Handler handler = StaticHandlerFactory.create(updateTimeHandler);
-            handler.sendEmptyMessage(0);
-
-        }
-**/
-        /*
-        // This is OLD way of usnig Handler which shows an warning.
-        private Handler oldHandler = new Handler() {
-
-            @Override
-            public void handleMessage(Message msg) {
-                // Handle a message as you want.
-            }
-
         }
 
-        // This is NEW way to avoid the warning.
-        private IStaticHandler newHandler = new IStaticHandler() {
+        private final MyHandler mHandler = new MyHandler(this);
 
-            @Override
-            public void handleMessage(Message msg) {
-                // Handle a message as the same as old handler is doing.
-            }
 
-        }
-
-        public void exampleOfOldHandler() {
-            // No initialization
-            Handler handler = oldHandler;
-            handler.sendEmptyMessage(0);
-        }
-
-        public void exampleOfNewHandler() {
-            // Initialize from factory class
-            Handler handler = StaticHandlerFactory.create(newHandler);
-            handler.sendEmptyMessage(0);
-        }
-
-*/
 
 
 
