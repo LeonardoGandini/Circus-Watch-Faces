@@ -2,19 +2,20 @@ package com.leonardogandini.circuswatchfaces;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+/*import android.view.Menu;
+import android.view.MenuItem;*/
 
 import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
-import android.widget.Button;
+//import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
 public class CircusMain extends ActionBarActivity {
+
 
     public void buttonOnClick(View v){
         Uri uri = Uri.parse("https://leonardogandini.com");

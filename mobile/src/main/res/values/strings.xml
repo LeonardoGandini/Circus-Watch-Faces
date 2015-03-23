@@ -3,4 +3,14 @@
     <!--string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string-->
     <string name="banner_ad_unit_id">ca-app-pub-8883827965457604/2801243541</string>
+    <string name="title_activity_circus_main_ancora">Circus Main</string>
+
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
