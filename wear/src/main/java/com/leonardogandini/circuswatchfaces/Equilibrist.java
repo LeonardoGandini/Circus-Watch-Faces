@@ -211,23 +211,23 @@ public class Equilibrist extends CanvasWatchFaceService {
 
 //***DEBUG***//
 
-         /*   float minuteRotation = time.second + milliseconds / 1000f;
+          /*  float minuteRotation = time.second + milliseconds / 1000f;
             float hourRotation = time.second + milliseconds / 1000f -10;
             float secondRotation = time.second + milliseconds / 1000f -175;*/
 
-            float minuteCenterX = 0.34f;
-            float minuteCenterY = 0.79f;
+            float minuteCenterX = 0.32f;
+            float minuteCenterY = 0.77f;
 
             if (!isInAmbientMode()) {
                 // Second hand.
                 secondRotation -= .42;
-                /*float secondCenterX = 0.34f;
-                float secondCenterY = 0.79f;*/
+                float secondCenterX = 0.34f;
+                float secondCenterY = 0.79f;
                 canvas.save();
-                canvas.translate(centerX +2.f, centerY -4.f);
+                canvas.translate(centerX + 9.f, centerY + 1.f);
                 canvas.rotate(secondRotation / (float) Math.PI * 180);
                 // canvas.rotate(secondRotation / (float) Math.PI));
-                canvas.translate(-minuteCenterX * secondHandScaled.getWidth(), -minuteCenterY * secondHandScaled.getHeight());
+                canvas.translate(-secondCenterX * secondHandScaled.getWidth(), -secondCenterY * secondHandScaled.getHeight());
                 canvas.drawBitmap(isInAmbientMode() ? secondHandScaledAmbient : secondHandScaled, 0, 0, handsPaint);
                 canvas.restore();
             }

@@ -19,7 +19,6 @@ import android.support.wearable.watchface.WatchFaceService;
 import android.support.wearable.watchface.WatchFaceStyle;
 import android.text.format.Time;
 import android.view.SurfaceHolder;
-
 //import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
@@ -82,7 +81,8 @@ public class Acrobats extends CanvasWatchFaceService {
         };*/
 
         /* handler to update the time once a second in interactive mode */
-        final Handler updateTimeHandler = new Handler() {
+
+       private Handler updateTimeHandler = new Handler() {
             @Override
             public void handleMessage(Message message) {
                 switch (message.what) {
@@ -99,6 +99,79 @@ public class Acrobats extends CanvasWatchFaceService {
                 }
             }
         };
+
+
+
+
+
+
+        /*private IStaticHandler updateTimeHandler = new IStaticHandler() {
+
+            @Override
+            public void handleMessage(Message message) {
+                switch (message.what) {
+                    case MSG_UPDATE_TIME:
+                        invalidate();
+                        if (timerShouldBeRunning()) {
+                            long timeMs = System.currentTimeMillis();
+                            long delayMs = INTERACTIVE_UPDATE_RATE_MS - (timeMs % INTERACTIVE_UPDATE_RATE_MS);
+                            updateTimeHandler.sendEmptyMessageDelayed(MSG_UPDATE_TIME, delayMs);
+                        }
+                        break;
+                }
+            }
+
+        };
+
+        public void newHandler() {
+            // Initialize from factory class
+            //IStaticHandler newHandler;
+            Handler handler = StaticHandlerFactory.create(updateTimeHandler);
+            handler.sendEmptyMessage(0);
+
+        }
+**/
+        /*
+        // This is OLD way of usnig Handler which shows an warning.
+        private Handler oldHandler = new Handler() {
+
+            @Override
+            public void handleMessage(Message msg) {
+                // Handle a message as you want.
+            }
+
+        }
+
+        // This is NEW way to avoid the warning.
+        private IStaticHandler newHandler = new IStaticHandler() {
+
+            @Override
+            public void handleMessage(Message msg) {
+                // Handle a message as the same as old handler is doing.
+            }
+
+        }
+
+        public void exampleOfOldHandler() {
+            // No initialization
+            Handler handler = oldHandler;
+            handler.sendEmptyMessage(0);
+        }
+
+        public void exampleOfNewHandler() {
+            // Initialize from factory class
+            Handler handler = StaticHandlerFactory.create(newHandler);
+            handler.sendEmptyMessage(0);
+        }
+
+*/
+
+
+
+
+
+
+
 
         @Override
         public void onAmbientModeChanged(boolean inAmbientMode) {
@@ -117,6 +190,7 @@ public class Acrobats extends CanvasWatchFaceService {
                     .setViewProtection(WatchFaceStyle.PROTECT_STATUS_BAR |
                             WatchFaceStyle.PROTECT_HOTWORD_INDICATOR)
                     .build());
+
 
 
             background = ((BitmapDrawable)
@@ -148,8 +222,25 @@ public class Acrobats extends CanvasWatchFaceService {
 
             updateTimeHandler.removeMessages(MSG_UPDATE_TIME);
             super.onDestroy();
-        }
+/*
+            unbindDrawables(findViewById(R.id.RootView));
+            System.gc();
 
+
+        private void unbindDrawables(View view) {
+            if (view.getBackground() != null) {
+                view.getBackground().setCallback(null);
+            }
+            if (view instanceof ViewGroup) {
+                for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
+                    unbindDrawables(((ViewGroup) view).getChildAt(i));
+                }
+                ((ViewGroup) view).removeAllViews();
+            }
+
+
+        }*/
+    }
         @Override
         public void onDraw(Canvas canvas, Rect bounds) {
             time.setToNow();
