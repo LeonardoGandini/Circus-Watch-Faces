@@ -253,9 +253,9 @@ public class Acrobats extends CanvasWatchFaceService {
             }
 
             //**-4sweep Draw every frame as long as we're visible and in interactive mode.
-          /*  if (isVisible() && !isInAmbientMode()) {
+            if (isVisible() && !isInAmbientMode()) {
                 invalidate();
-            }*/
+            }
         }
 
         @Override

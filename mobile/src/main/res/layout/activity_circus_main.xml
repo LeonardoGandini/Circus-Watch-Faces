@@ -74,6 +74,18 @@
             android:layout_toRightOf="@+id/leobutton"
             android:layout_toEndOf="@+id/leobutton" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caccia la grana"
+            android:id="@+id/grana"
+            android:nestedScrollingEnabled="true"
+            android:onClick="buttonOnClickGrana"
+            android:layout_below="@+id/leobutton"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_marginTop="30dp" />
+
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="wrap_content"
