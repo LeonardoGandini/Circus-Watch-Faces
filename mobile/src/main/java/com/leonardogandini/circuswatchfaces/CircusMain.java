@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -17,6 +18,12 @@ import com.leonardogandini.circuswatchfaces.util.IabResult;
 import com.leonardogandini.circuswatchfaces.util.Inventory;
 import com.leonardogandini.circuswatchfaces.util.Purchase;
 
+import android.app.Activity;
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.Button;
+
+import com.google.ads.AdSize;
 
 
 public class CircusMain extends ActionBarActivity {
@@ -34,9 +41,9 @@ public class CircusMain extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circus_main);
 
-        AdView mAdView = (AdView) findViewById(R.id.adView);
+       /* AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);*/
 
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqbichWrlW0mUt8FdQ/aVZbBYrZ2sDwea3LT2cuwsEQZaNiYt2c1OJplM0tzceWF5F2sP4p/qir+EKfhSgo67eohuPHohdlbnzVnGr0Yjox0csxTz3b/LjuUhfqyQrYlNzjGCsXlqDFEaM1IcwXalY39/rzWTvyMU2VZpPys5wIwnyKk8cJkLK3d278kjNYA64Big8xpjfwfbIVBMhqMgZEDF6wShfiRFBHdCg8RDAq+Ec/WE+kWBDI4lyRj8Z7ecsNP5j5I0T8jlUJoX+oXAKJv0kHrv4W8+Th1roonQROnL5PNv8Zr+aAhdeZ/Y4cgsB2gmbSuLN9TNeN00z9Se9wIDAQAB";
 
@@ -54,6 +61,8 @@ public class CircusMain extends ActionBarActivity {
                 if (!result.isSuccess()) {
                     // Oh noes, there was a problem.
                     Log.d(TAG, "Problem setting up In-app Billing: " + result);
+
+
                 }
                 // Hooray, IAB is fully set up!
             }
@@ -61,6 +70,8 @@ public class CircusMain extends ActionBarActivity {
 
 
     }
+
+
 
     @Override
     public void onDestroy() {
@@ -100,6 +111,7 @@ public class CircusMain extends ActionBarActivity {
     }
     // User clicked the "Upgrade" button.
     public void buttonOnClickGrana(View v) {
+
         Log.d(TAG, "Upgrade button clicked; launching purchase flow for upgrade.");
        //setWaitScreen(true);
 
@@ -167,7 +179,18 @@ public class CircusMain extends ActionBarActivity {
         {
             if (result.isFailure()) {
                 Log.d(TAG, "Error purchasing: " + result);
-                return;
+               // return;
+
+                AdView mAdView = (AdView) findViewById(R.id.adView);
+                AdRequest adRequest = new AdRequest.Builder().build();
+                mAdView.loadAd(adRequest);
+//
+//                (Relativo) adscontainer = (Relativo) findViewById(R.id.ScrollView01);
+//                View admobAds = (View) findViewById(R.id.adView);
+//                adscontainer.removeView(admobAds);
+
+
+
             }
             else if (purchase.getSku().equals(SKU_NOAD)) {
                 // give user access to premium content and update the UI
@@ -178,27 +201,7 @@ public class CircusMain extends ActionBarActivity {
 
 
 
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_CircusMain, menu);
-        return true;
-    }*/
 
-   /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 
 
 
