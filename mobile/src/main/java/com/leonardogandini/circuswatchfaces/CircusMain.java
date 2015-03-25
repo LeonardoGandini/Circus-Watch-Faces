@@ -29,6 +29,7 @@ public class CircusMain extends ActionBarActivity {
     //static final String SKU_NOAD = "android.test.purchased";
     boolean mIsPremium = false;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +65,9 @@ public class CircusMain extends ActionBarActivity {
         });
 
 
-
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
     }
@@ -84,17 +87,12 @@ public class CircusMain extends ActionBarActivity {
                                              Inventory inventory) {
 
             if (result.isFailure()) {
-                // handle error here
                 setContentView(R.layout.relativo_cattivita);
-                AdView mAdView = (AdView) findViewById(R.id.adView);
-                AdRequest adRequest = new AdRequest.Builder().build();
-                mAdView.loadAd(adRequest);
 
             }
             else {
                 // does the user have the premium upgrade?
                 mIsPremium = inventory.hasPurchase(SKU_NOAD);
-                // update UI accordingly
                 setContentView(R.layout.relativo_libero);
 
             }
@@ -139,13 +137,12 @@ public class CircusMain extends ActionBarActivity {
 
         // Pass on the activity result to the helper for handling
         if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
-            // not handled, so handle it ourselves (here's where you'd
-            // perform any handling of activity results not related to in-app
-            // billing...
             super.onActivityResult(requestCode, resultCode, data);
+            setContentView(R.layout.relativo_cattivita);
         }
         else {
             Log.d(TAG, "onActivityResult handled by IABUtil.");
+            setContentView(R.layout.relativo_libero);
         }
     }
 
@@ -164,15 +161,10 @@ public class CircusMain extends ActionBarActivity {
         {
             if (result.isFailure()) {
                 Log.d(TAG, "Error purchasing: " + result);
-               // return;
-
-
-
+                setContentView(R.layout.relativo_cattivita);
             }
             else if (purchase.getSku().equals(SKU_NOAD)) {
-                // give user access to premium content and update the UI
-
-
+                setContentView(R.layout.relativo_libero);
             }
         }
     };
