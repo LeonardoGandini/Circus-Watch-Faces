@@ -100,7 +100,8 @@
             android:layout_alignWithParentIfMissing="false"
             android:layout_alignParentRight="false"
             android:layout_alignParentTop="false"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/grana">
         </com.google.android.gms.ads.AdView>
 
     </RelativeLayout>

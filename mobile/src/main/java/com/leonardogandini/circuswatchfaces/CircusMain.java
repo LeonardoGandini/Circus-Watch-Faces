@@ -32,7 +32,7 @@ public class CircusMain extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_circus_main);
+        setContentView(R.layout.relativo_cattivita);
 
         String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqbichWrlW0mUt8FdQ/aVZbBYrZ2sDwea3LT2cuwsEQZaNiYt2c1OJplM0tzceWF5F2sP4p/qir+EKfhSgo67eohuPHohdlbnzVnGr0Yjox0csxTz3b/LjuUhfqyQrYlNzjGCsXlqDFEaM1IcwXalY39/rzWTvyMU2VZpPys5wIwnyKk8cJkLK3d278kjNYA64Big8xpjfwfbIVBMhqMgZEDF6wShfiRFBHdCg8RDAq+Ec/WE+kWBDI4lyRj8Z7ecsNP5j5I0T8jlUJoX+oXAKJv0kHrv4W8+Th1roonQROnL5PNv8Zr+aAhdeZ/Y4cgsB2gmbSuLN9TNeN00z9Se9wIDAQAB";
 
@@ -85,7 +85,7 @@ public class CircusMain extends ActionBarActivity {
 
             if (result.isFailure()) {
                 // handle error here
-                setContentView(R.layout.activity_circus_main);
+                setContentView(R.layout.relativo_cattivita);
                 AdView mAdView = (AdView) findViewById(R.id.adView);
                 AdRequest adRequest = new AdRequest.Builder().build();
                 mAdView.loadAd(adRequest);
@@ -95,9 +95,12 @@ public class CircusMain extends ActionBarActivity {
                 // does the user have the premium upgrade?
                 mIsPremium = inventory.hasPurchase(SKU_NOAD);
                 // update UI accordingly
-                setContentView(R.layout.relativo_libero);
+              //  setContentView(R.layout.relativo_libero);
 
-
+                setContentView(R.layout.relativo_cattivita);
+                AdView mAdView = (AdView) findViewById(R.id.adView);
+                AdRequest adRequest = new AdRequest.Builder().build();
+                mAdView.loadAd(adRequest);
             }
         }
     };
