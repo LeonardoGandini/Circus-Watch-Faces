@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="This app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it.\n\nRealized by Leonardo Gandini, drawings and original design by Roberta Pagnoni"
+            android:text="@string/spiega"
             android:id="@+id/textView2"
             android:textColor="#ff000000"
             android:layout_alignParentLeft="true"
@@ -46,10 +46,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Want to know more?"
+            android:text="@string/knowmore"
             android:id="@+id/textView3"
             android:textColor="#ffe8b800"
-            android:textSize="22dp"
+            android:textSize="22sp"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="23dp" />
@@ -57,28 +57,29 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Leonardo Gandini"
+            android:text="@string/leoname"
             android:id="@+id/leobutton"
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClick"
             android:layout_below="@+id/textView3"
             android:layout_alignLeft="@+id/adView"
             android:layout_alignStart="@+id/adView" />
+
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Roberta Pagnoni"
+            android:text="@string/robename"
             android:id="@+id/robebutton"
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClickroberta"
             android:layout_below="@+id/textView3"
             android:layout_toRightOf="@+id/leobutton"
             android:layout_toEndOf="@+id/leobutton" />
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Caccia la grana"
+            android:text="@string/donate"
             android:id="@+id/grana"
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClickGrana"
@@ -86,6 +87,7 @@
             android:layout_alignRight="@+id/imageView"
             android:layout_alignEnd="@+id/imageView"
             android:layout_marginTop="30dp" />
+
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"

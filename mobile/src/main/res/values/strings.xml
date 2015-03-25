@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Circus Watch Faces</string>
-    <!--string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string-->
     <string name="banner_ad_unit_id">ca-app-pub-8883827965457604/2801243541</string>
     <string name="title_activity_circus_main_ancora">Circus Main</string>
-
+    <string name="spiega">This app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it.\n\nRealized by Leonardo Gandini, drawings and original design by Roberta Pagnoni</string>
+    <string name="knowmore">Want to know more?</string>
+    <string name="leoname">Leonardo Gandini</string>
+    <string name="robename">Roberta Pagnoni</string>
+    <string name="donate">Buy me a coffee</string>
+    <string name="cheers">Thanks for supporting my work!!</string>
 </resources>
