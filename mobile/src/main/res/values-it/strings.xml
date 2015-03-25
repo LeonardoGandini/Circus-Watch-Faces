@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Circus Watch Faces</string>
+    <string name="title_activity_circus_main_ancora">Circus Main</string>
+    <string name="spiega">This app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it.\n\nRealized by Leonardo Gandini, drawings and original design by Roberta Pagnoni</string>
+    <string name="knowmore">Vuoi saperne di più?</string>
+    <string name="leoname">Leonardo Gandini</string>
+    <string name="robename">Roberta Pagnoni</string>
+    <string name="donatespiega">This app is 100\% free and it will remain so!\nIf you want to support our work however, you can click the donate button to remove ads, a simple and really inexpensive way to say thanks for our work.\n\nWhatever you decide\.\.\. enjoy you new watch faces!</string>
+    <string name="donate">Fai una donazione</string>
+    <string name="cheers">Grazie per aver supportato il nostro lavoro!!</string>
+</resources>
