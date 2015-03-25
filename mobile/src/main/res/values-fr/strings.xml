@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">I Quadranti del Circo</string>
+    <string name="app_name">Les Cadrans de Cirque</string>
     <string name="title_activity_circus_main_ancora">Circus Main</string>
     <string name="spiega">Quest\'app è realizzata per <b>Android Wear</b>, ti serve un Android Wear smartwatch per poterla utilizzare.\n\nRealizzata da <b>Leonardo Gandini</b>, illustrazioni e design sono un\'idea di <b>Roberta Pagnoni</b></string>
     <string name="knowmore">Vuoi saperne di più?</string>
