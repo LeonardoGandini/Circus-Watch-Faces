@@ -85,8 +85,8 @@
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClick"
             android:layout_below="@+id/textView3"
-            android:layout_alignRight="@+id/imageView"
-            android:layout_alignEnd="@+id/imageView"
+            android:layout_alignRight="@+id/logo"
+            android:layout_alignEnd="@+id/logo"
             android:layout_marginRight="74dp"
             android:layout_marginEnd="74dp" />
 

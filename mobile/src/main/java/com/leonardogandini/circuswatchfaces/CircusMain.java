@@ -95,12 +95,8 @@ public class CircusMain extends ActionBarActivity {
                 // does the user have the premium upgrade?
                 mIsPremium = inventory.hasPurchase(SKU_NOAD);
                 // update UI accordingly
-              //  setContentView(R.layout.relativo_libero);
+                setContentView(R.layout.relativo_libero);
 
-                setContentView(R.layout.relativo_cattivita);
-                AdView mAdView = (AdView) findViewById(R.id.adView);
-                AdRequest adRequest = new AdRequest.Builder().build();
-                mAdView.loadAd(adRequest);
             }
         }
     };
