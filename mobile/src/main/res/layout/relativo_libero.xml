@@ -24,9 +24,9 @@
 
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:id="@+id/imageView"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:id="@+id/logo"
             android:src="@drawable/ic_launcher"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -42,7 +42,7 @@
             android:layout_centerHorizontal="true"
             android:paddingTop="10dp"
             android:nestedScrollingEnabled="false"
-            android:layout_below="@+id/imageView" />
+            android:layout_below="@+id/logo" />
 
         <ImageView
             android:layout_width="80dp"
@@ -98,11 +98,9 @@
             android:id="@+id/robebutton"
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClickroberta"
-            android:layout_below="@+id/textView3"
-            android:layout_alignLeft="@+id/imageView"
-            android:layout_alignStart="@+id/imageView"
-            android:layout_marginLeft="81dp"
-            android:layout_marginStart="81dp" />
+            android:layout_alignTop="@+id/leobutton"
+            android:layout_alignRight="@+id/cheerstext"
+            android:layout_alignEnd="@+id/cheerstext" />
 
 
 

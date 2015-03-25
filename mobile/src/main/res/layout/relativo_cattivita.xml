@@ -22,12 +22,23 @@
         android:background="@color/background_material_light"
         android:nestedScrollingEnabled="true">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/imageView"
-            android:src="@drawable/ic_launcher"
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id"
+            android:layout_alignWithParentIfMissing="false"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+        </com.google.android.gms.ads.AdView>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/logo"
+            android:src="@drawable/ic_launcher"
+            android:layout_below="@+id/adView"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -39,7 +50,7 @@
             android:textColor="#ff000000"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView"
+            android:layout_below="@+id/logo"
             android:paddingTop="12dp" />
 
         <TextView
@@ -77,32 +88,26 @@
             android:layout_toRightOf="@+id/leobutton"
             android:layout_toEndOf="@+id/leobutton" />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/donate"
-            android:id="@+id/grana"
+            android:id="@+id/granabutton"
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClickGrana"
             android:layout_below="@+id/leobutton"
-            android:layout_alignRight="@+id/imageView"
-            android:layout_alignEnd="@+id/imageView"
-            android:layout_marginTop="30dp" />
-
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#ffffa802" />
+        droid:text="@string/knowmore"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id"
-            android:layout_alignParentLeft="false"
-            android:layout_alignWithParentIfMissing="false"
-            android:layout_alignParentRight="false"
-            android:layout_alignParentTop="false"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/grana">
-        </com.google.android.gms.ads.AdView>
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/donatespiega"
+            android:id="@+id/textView"
+            android:layout_below="@+id/granabutton"
+            android:textColor="#000000"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
