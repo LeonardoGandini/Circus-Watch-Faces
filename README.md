@@ -25,4 +25,4 @@ Drawings and original design by Roberta Pagnoni - <a href="http://robertapagnoni
   </tbody>
 </table>
 
-<img src="http://robertapagnoni.it/circuswatchfaces/icon512.png"/>
+<!--img src="http://robertapagnoni.it/circuswatchfaces/icon512.png"/-->
