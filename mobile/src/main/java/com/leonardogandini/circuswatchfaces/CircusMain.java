@@ -20,15 +20,12 @@ import com.leonardogandini.circuswatchfaces.util.Purchase;
 
 public class CircusMain extends ActionBarActivity {
 
-    // Debug tag, for logging
     static final String TAG = "CircusWatch";
-
     IabHelper mHelper;
 
     static final String SKU_NOAD = "com.dgwp.circuswatchfaces.removeads";
     //static final String SKU_NOAD = "android.test.purchased";
     boolean mIsPremium = false;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,39 +36,30 @@ public class CircusMain extends ActionBarActivity {
 
         Log.d(TAG, "Creating IAB helper.");
 
-       // compute your public key and store it in base64EncodedPublicKey
         mHelper = new IabHelper(this, base64EncodedPublicKey);
 
-        // Start setup. This is asynchronous and the specified listener
-        // will be called once setup completes.
         Log.d(TAG, "Starting setup.");
         mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
             public void onIabSetupFinished(IabResult result) {
                 Log.d(TAG, "Setup finished.");
 
                 if (!result.isSuccess()) {
-                    // Oh noes, there was a problem.
                    // complain("Problem setting up in-app billing: " + result);
                     return;
                 }
 
                 // Have we been disposed of in the meantime? If so, quit.
                 if (mHelper == null) return;
-
-                // IAB is fully set up. Now, let's get an inventory of stuff we own.
                 Log.d(TAG, "Setup successful. Querying inventory.");
                 mHelper.queryInventoryAsync(mGotInventoryListener);
             }
         });
 
-
+        /*Genera l'ad*/
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
-
     }
-
 
     @Override
     public void onDestroy() {
@@ -91,26 +79,18 @@ public class CircusMain extends ActionBarActivity {
 
             }
             else {
-                // does the user have the premium upgrade?
+                // suupa powa?
                 mIsPremium = inventory.hasPurchase(SKU_NOAD);
                 setContentView(R.layout.relativo_libero);
-
             }
         }
     };
-
-
-
-
 
 
     public void buttonOnClick(View v){
         Uri uri = Uri.parse("https://leonardogandini.com");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
-    }
-    public void buttonPROVAOnClick(View v){
-
     }
 
 
@@ -119,10 +99,9 @@ public class CircusMain extends ActionBarActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
-    // User clicked the "Upgrade" button.
+
+
     public void buttonOnClickGrana(View v) {
-
-
 
         Log.d(TAG, "Upgrade button clicked; launching purchase flow for upgrade.");
        //setWaitScreen(true);
@@ -134,7 +113,6 @@ public class CircusMain extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "onActivityResult(" + requestCode + "," + resultCode + "," + data);
         if (mHelper == null) return;
-
         // Pass on the activity result to the helper for handling
         if (!mHelper.handleActivityResult(requestCode, resultCode, data)) {
             super.onActivityResult(requestCode, resultCode, data);
@@ -146,8 +124,6 @@ public class CircusMain extends ActionBarActivity {
         }
     }
 
-
-    /** Verifies the developer payload of a purchase. */
     boolean verifyDeveloperPayload(Purchase p) {
         //String payload = p.getDeveloperPayload();
         String payload = "fdsg4598khdsgfgsffsdgfdg";
