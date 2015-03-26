@@ -120,19 +120,19 @@ public class Juggler extends CanvasWatchFaceService {
 
             System.gc();
             background = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_base)).getBitmap();
+                    getDrawable(R.drawable.juggler_base)).getBitmap();
             hourHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ore)).getBitmap();
+                    getDrawable(R.drawable.juggler_ore)).getBitmap();
             minuteHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_minuti)).getBitmap();
+                    getDrawable(R.drawable.juggler_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ambient_base)).getBitmap();
+                    getDrawable(R.drawable.juggler_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ambient_ore)).getBitmap();
+                    getDrawable(R.drawable.juggler_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_ambient_minuti)).getBitmap();
+                    getDrawable(R.drawable.juggler_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.juggler_secondi)).getBitmap();
+                    getDrawable(R.drawable.juggler_secondi)).getBitmap();
 
 
             handsPaint = new Paint();

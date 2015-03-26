@@ -120,19 +120,19 @@ public class Elephant extends CanvasWatchFaceService {
 
             System.gc();
             background = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_base)).getBitmap();
+                    getDrawable(R.drawable.elephant_base)).getBitmap();
             hourHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_ore)).getBitmap();
+                    getDrawable(R.drawable.elephant_ore)).getBitmap();
             minuteHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_minuti)).getBitmap();
+                    getDrawable(R.drawable.elephant_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_ambient_base)).getBitmap();
+                    getDrawable(R.drawable.elephant_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_ambient_ore)).getBitmap();
+                    getDrawable(R.drawable.elephant_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_ambient_minuti)).getBitmap();
+                    getDrawable(R.drawable.elephant_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.elephant_secondi)).getBitmap();
+                    getDrawable(R.drawable.elephant_secondi)).getBitmap();
 
 
             handsPaint = new Paint();

@@ -120,19 +120,19 @@ public class Seal extends CanvasWatchFaceService {
 
 
             background = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_base)).getBitmap();
+                    getDrawable(R.drawable.seal_base)).getBitmap();
             hourHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_ore)).getBitmap();
+                    getDrawable(R.drawable.seal_ore)).getBitmap();
             minuteHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_minuti)).getBitmap();
+                    getDrawable(R.drawable.seal_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_ambient_base)).getBitmap();
+                    getDrawable(R.drawable.seal_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_ambient_ore)).getBitmap();
+                    getDrawable(R.drawable.seal_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_ambient_minuti)).getBitmap();
+                    getDrawable(R.drawable.seal_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.seal_secondi)).getBitmap();
+                    getDrawable(R.drawable.seal_secondi)).getBitmap();
 
 
             handsPaint = new Paint();

@@ -120,19 +120,19 @@ public class Equilibrist extends CanvasWatchFaceService {
 
             System.gc();
             background = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_base)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_base)).getBitmap();
             hourHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_ore)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_ore)).getBitmap();
             minuteHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_minuti)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_minuti)).getBitmap();
             backgroundAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_ambient_base)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_ambient_base)).getBitmap();
             hourHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_ambient_ore)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_ambient_ore)).getBitmap();
             minuteHandAmbient = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_ambient_minuti)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_ambient_minuti)).getBitmap();
             secondHand = ((BitmapDrawable)
-                    getResources().getDrawable(R.drawable.equilibrist_secondi)).getBitmap();
+                    getDrawable(R.drawable.equilibrist_secondi)).getBitmap();
 
 
             handsPaint = new Paint();
