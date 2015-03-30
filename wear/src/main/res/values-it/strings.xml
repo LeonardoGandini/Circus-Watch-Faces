@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">I Quadranti del Circo</string>
+    <string name="acrobat_name">Circo Acrobati</string>
+    <string name="juggler_name">Circo Giocoliere</string>
+    <string name="equilibrist_name">Circo Equilibrista</string>
+    <string name="seal_name">Circo Foca</string>
+    <string name="elephant_name">Circo Elefante</string>
+</resources>
