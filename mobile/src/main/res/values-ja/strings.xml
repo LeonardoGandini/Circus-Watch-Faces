@@ -1,8 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">サーカスのウォッチ フェイス</string>
     <string name="banner_ad_unit_id">ca-app-pub-8883827965457604/2801243541</string>
     <string name="title_activity_circus_main_ancora">Circus Main</string>
-    <string name="spiega">This app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it.\n\nRealized by Leonardo Gandini, drawings and original design by Roberta Pagnoni</string>
+    <string name="spっっっっっsiega">This app is intended for Android Wear, you need an Android Wear smartwatch if you want to use it.\n\nRealized by Leonardo Gandini, drawings and original design by Roberta Pagnoni</string>
+    <string name="spiega">このアプリはAndroid Wearのためのアプリで使用すればAndroid Wearのスマートウォッチが必要です。</string>
     <string name="knowmore">Want to know more?</string>
     <string name="leoname">レオナルド・ガンディー二</string>
     <string name="robename">ロベルタ・パニョーニ</string>
