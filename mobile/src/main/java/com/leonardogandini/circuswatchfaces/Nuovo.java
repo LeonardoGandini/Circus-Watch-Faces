@@ -143,17 +143,17 @@ public class Nuovo extends Activity {
 
             Purchase premiumPurchase = inventory.getPurchase(SKU_NOAD);
             mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
-//
-//            if (result.isFailure()) {
-//                // handle error here
-//            }
-//            else {
-//                // does the user have the premium upgrade?
-//                mIsPremium = inventory.hasPurchase(SKU_NOAD);
-//                // update UI accordingly
-//                setContentView(R.layout.relativo_libero);
-//            }
-            updateUi();
+
+            if (result.isFailure()) {
+                // handle error here
+            }
+            else {
+                // does the user have the premium upgrade?
+                mIsPremium = inventory.hasPurchase(SKU_NOAD);
+                // update UI accordingly
+                updateUi();
+            }
+
         }
     };
 
@@ -173,11 +173,11 @@ public class Nuovo extends Activity {
 
 
 
-    //static final String payload = "fdsg4598khdsgfgsffsdgfdg";
+  //  static final String payload = "fdsg4598khdsgfgsffsdgfdg";
 
     /** Verifies the developer payload of a purchase. */
     boolean verifyDeveloperPayload(Purchase p) {
-        String payload = "fdsg4598khdsgfgsffsdgfdg";
+        String payload = p.getDeveloperPayload();
 
         /*
          * TODO: verify that the developer payload of the purchase is correct. It will be
@@ -210,7 +210,7 @@ public class Nuovo extends Activity {
 
         //setWaitScreen(true);
       //  String payload = "fdsg4598khdsgfgsffsdgfdg";
-        String payload = "fdsg4598khdsgfgsffsdgfdg";
+        String payload = "";
         mHelper.launchPurchaseFlow(this, SKU_NOAD, 15254605, mPurchaseFinishedListener, payload);
     }
 
@@ -290,16 +290,16 @@ public class Nuovo extends Activity {
 // updates UI to reflect model
 public void updateUi() {
     // update the car color to reflect premium status or lack thereof
-   // setContentView(mIsPremium ? R.layout.relativo_libero : R.layout.relativo_cattivita);
+    setContentView(mIsPremium ? R.layout.relativo_libero : R.layout.relativo_cattivita);
 
-    if (mIsPremium){
+    /*if (mIsPremium){
         setContentView(R.layout.relativo_libero);
     }
     else{
         AdViewisIn();
-    }
+    }*/
 
-    
+
 }
     public void AdViewisIn() {
         setContentView(R.layout.relativo_cattivita);
