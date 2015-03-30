@@ -16,7 +16,7 @@ import com.leonardogandini.circuswatchfaces.util.Inventory;
 import com.leonardogandini.circuswatchfaces.util.Purchase;
 
 
-public class Nuovo extends Activity {
+public class CircusWFMain extends Activity {
 
     boolean mIsPremium = false;
 
