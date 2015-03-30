@@ -24,7 +24,7 @@ public class Nuovo extends Activity {
     boolean mIsPremium = false;
 
     static final String SKU_NOAD = "com.dgwp.circuswatchfaces.removeads";
-    //static final String SKU_NOAD = "android.test.purchased";
+  //static final String SKU_NOAD = "android.test.purchased";
 
     IabHelper mHelper;
 
@@ -205,6 +205,40 @@ public class Nuovo extends Activity {
         return true;
     }
 
+    // Callback for when a purchase is finished
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+
+
+            // if we were disposed of in the meantime, quit.
+            if (mHelper == null) return;
+
+            if (result.isFailure()) {
+                complain("Error purchasing: " + result);
+
+                return;
+            }
+            if (!verifyDeveloperPayload(purchase)) {
+                complain("Error purchasing. Authenticity verification failed.");
+
+                return;
+            }
+
+
+
+            if (purchase.getSku().equals(SKU_NOAD)) {
+                // bought the premium upgrade!
+
+                alert(getString(R.string.cheers));
+
+                mIsPremium = true;
+                updateUi();
+
+            }
+
+        }
+    };
+
     public void buttonOnClickGrana(View v) {
 
 
@@ -230,19 +264,6 @@ public class Nuovo extends Activity {
 
 
 
-    // Callback for when a purchase is finished
-    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener
-            = new IabHelper.OnIabPurchaseFinishedListener() {
-        public void onIabPurchaseFinished(IabResult result, Purchase purchase)
-        {
-            if (result.isFailure()) {
-                //setContentView(R.layout.relativo_cattivita);
-            }
-            else if (purchase.getSku().equals(SKU_NOAD)) {
-               // setContentView(R.layout.relativo_libero);
-            }
-        }
-    };
 
 //    IabHelper.QueryInventoryFinishedListener mQueryFinishedListener = new IabHelper.QueryInventoryFinishedListener() {
 //        public void onQueryInventoryFinished(IabResult result, Inventory inventory)
@@ -273,18 +294,18 @@ public class Nuovo extends Activity {
         mHelper = null;
     }
 
-//    void complain(String message) {
-//
-//        alert("Error: " + message);
-//    }
-//
-//    void alert(String message) {
-//        AlertDialog.Builder bld = new AlertDialog.Builder(this);
-//        bld.setMessage(message);
-//        bld.setNeutralButton("OK", null);
-//
-//        bld.create().show();
-//    }
+    void complain(String message) {
+
+        alert("Error: " + message);
+    }
+
+    void alert(String message) {
+        AlertDialog.Builder bld = new AlertDialog.Builder(this);
+        bld.setMessage(message);
+        bld.setNeutralButton("OK", null);
+
+        bld.create().show();
+    }
 
 
 // updates UI to reflect model
