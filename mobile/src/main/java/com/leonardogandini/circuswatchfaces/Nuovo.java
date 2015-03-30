@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -20,23 +21,18 @@ import com.leonardogandini.circuswatchfaces.util.Purchase;
 
 public class Nuovo extends Activity {
 
-    IabHelper mHelper;
+    boolean mIsPremium = false;
 
     static final String SKU_NOAD = "com.dgwp.circuswatchfaces.removeads";
     //static final String SKU_NOAD = "android.test.purchased";
 
-
-    boolean mIsPremium = false;
+    IabHelper mHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.relativo_cattivita);
 
-        /*Genera l'ad*/
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        AdViewisIn();
 
         //String base64EncodedPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqbichWrlW0mUt8FdQ/aVZbBYrZ2sDwea3LT2cuwsEQZaNiYt2c1OJplM0tzceWF5F2sP4p/qir+EKfhSgo67eohuPHohdlbnzVnGr0Yjox0csxTz3b/LjuUhfqyQrYlNzjGCsXlqDFEaM1IcwXalY39/rzWTvyMU2VZpPys5wIwnyKk8cJkLK3d278kjNYA64Big8xpjfwfbIVBMhqMgZEDF6wShfiRFBHdCg8RDAq+Ec/WE+kWBDI4lyRj8Z7ecsNP5j5I0T8jlUJoX+oXAKJv0kHrv4W8+Th1roonQROnL5PNv8Zr+aAhdeZ/Y4cgsB2gmbSuLN9TNeN00z9Se9wIDAQAB";
 
@@ -68,7 +64,6 @@ public class Nuovo extends Activity {
 
 
 
-
     }
 
 
@@ -80,41 +75,41 @@ public class Nuovo extends Activity {
 
 
     // Listener that's called when we finish querying the items and subscriptions we own
-    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
-        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
-
-            if (mHelper == null) return;
-
-            // Is it a failure?
-            if (result.isFailure()) {
-               return;
-            }
-
-
-
-            /*
-             * Check for items we own. Notice that for each purchase, we check
-             * the developer payload to see if it's correct! See
-             * verifyDeveloperPayload().
-             */
-
-            // Do we have the premium upgrade?
-          /*  Purchase premiumPurchase = inventory.getPurchase(SKU_NOAD);
-            mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
-
-*/
-
-
-
-            // Do we have the premium upgrade?
-            Purchase premiumPurchase = inventory.getPurchase(SKU_NOAD);
-            mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
-            setContentView(R.layout.relativo_libero);
-        }
-
-
-
-    };
+//    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+//        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+//
+//            if (mHelper == null) return;
+//
+//            // Is it a failure?
+//            if (result.isFailure()) {
+//               return;
+//            }
+//
+//
+//
+//            /*
+//             * Check for items we own. Notice that for each purchase, we check
+//             * the developer payload to see if it's correct! See
+//             * verifyDeveloperPayload().
+//             */
+//
+//            // Do we have the premium upgrade?
+//          /*  Purchase premiumPurchase = inventory.getPurchase(SKU_NOAD);
+//            mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
+//
+//*/
+//
+//
+//
+//            // Do we have the premium upgrade?
+//            Purchase premiumPurchase = inventory.getPurchase(SKU_NOAD);
+//            mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
+//            //setContentView(R.layout.relativo_libero);
+//        }
+//
+//
+//
+//    };
 
 
 //    IabHelper.QueryInventoryFinishedListener mGotInventoryListener
@@ -124,6 +119,7 @@ public class Nuovo extends Activity {
 //
 //            if (result.isFailure()) {
 //                // handle error here
+//                setContentView(R.layout.relativo_cattivita);
 //            }
 //            else {
 //                // does the user have the premium upgrade?
@@ -135,6 +131,31 @@ public class Nuovo extends Activity {
 //    };
 
 
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+
+            if (mHelper == null) return;
+
+            if (result.isFailure()) {
+              //  complain("Failed to query inventory: " + result);
+                return;
+            }
+
+            Purchase premiumPurchase = inventory.getPurchase(SKU_NOAD);
+            mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
+//
+//            if (result.isFailure()) {
+//                // handle error here
+//            }
+//            else {
+//                // does the user have the premium upgrade?
+//                mIsPremium = inventory.hasPurchase(SKU_NOAD);
+//                // update UI accordingly
+//                setContentView(R.layout.relativo_libero);
+//            }
+            updateUi();
+        }
+    };
 
 
     public void buttonOnClick(View v){
@@ -244,16 +265,13 @@ public class Nuovo extends Activity {
 //    }
 // We're being destroyed. It's important to dispose of the helper here!
 
-    @Override
-public void onDestroy() {
-    super.onDestroy();
 
-    // very important:
-    if (mHelper != null) {
-        mHelper.dispose();
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mHelper != null) mHelper.dispose();
         mHelper = null;
     }
-}
 
 //    void complain(String message) {
 //
@@ -268,5 +286,27 @@ public void onDestroy() {
 //        bld.create().show();
 //    }
 
+
+// updates UI to reflect model
+public void updateUi() {
+    // update the car color to reflect premium status or lack thereof
+   // setContentView(mIsPremium ? R.layout.relativo_libero : R.layout.relativo_cattivita);
+
+    if (mIsPremium){
+        setContentView(R.layout.relativo_libero);
+    }
+    else{
+        AdViewisIn();
+    }
+
+    
+}
+    public void AdViewisIn() {
+        setContentView(R.layout.relativo_cattivita);
+    /*Genera l'ad*/
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+    }
 
 }
