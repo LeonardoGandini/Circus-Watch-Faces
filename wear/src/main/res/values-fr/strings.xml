@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Les Cadrans de Cirque</string>
+    <string name="acrobat_name">Cirque Acrobates</string>
+    <string name="juggler_name">Cirque Jongleur</string>
+    <string name="equilibrist_name">Cirque Équilibriste</string>
+    <string name="seal_name">Cirque Phoque</string>
+    <string name="elephant_name">Cirque Éléphant</string>
+</resources>
