@@ -15,8 +15,8 @@ android {
         applicationId "com.leonardogandini.circuswatchfaces"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 14
-        versionName '1.0.1'
+        versionCode 17
+        versionName '1.0.3'
         signingConfig signingConfigs.chiavewear
 
     }
@@ -29,18 +29,10 @@ android {
     productFlavors {
         AdFree {
             applicationId "com.leonardogandini.circuswatchfaces"
-            minSdkVersion 9
-            targetSdkVersion 22
-            versionCode 1
-            versionName '1'
             signingConfig signingConfigs.chiavewear
         }
         AdDiBestia {
             applicationId "com.leonardogandini.circuswatchfaces"
-            minSdkVersion 9
-            targetSdkVersion 22
-            versionCode 14
-            versionName '1.0.1'
             signingConfig signingConfigs.chiavewear
         }
     }
