@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.DeviceDefault" >
         <service
-            android:name=".Acrobats"
+            android:name="com.leonardogandini.circuswatchfaces.Acrobats"
             android:allowEmbedded="true"
             android:label="@string/acrobat_name"
             android:permission="android.permission.BIND_WALLPAPER"
@@ -41,7 +41,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".Juggler"
+            android:name="com.leonardogandini.circuswatchfaces.Juggler"
             android:allowEmbedded="true"
             android:label="@string/juggler_name"
             android:permission="android.permission.BIND_WALLPAPER"
@@ -63,7 +63,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".Equilibrist"
+            android:name="com.leonardogandini.circuswatchfaces.Equilibrist"
             android:allowEmbedded="true"
             android:label="@string/equilibrist_name"
             android:permission="android.permission.BIND_WALLPAPER"
@@ -85,7 +85,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".Seal"
+            android:name="com.leonardogandini.circuswatchfaces.Seal"
             android:allowEmbedded="true"
             android:label="@string/seal_name"
             android:permission="android.permission.BIND_WALLPAPER"
@@ -107,7 +107,7 @@
             </intent-filter>
         </service>
         <service
-            android:name=".Elephant"
+            android:name="com.leonardogandini.circuswatchfaces.Elephant"
             android:allowEmbedded="true"
             android:label="@string/elephant_name"
             android:permission="android.permission.BIND_WALLPAPER"

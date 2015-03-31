@@ -1,14 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        chiavewear {
+            keyAlias 'chiavewear'
+            keyPassword 'giocoliere'
+            storeFile file('/Users/lgandini/keyperwear.jks')
+            storePassword 'giocoliere'
+        }
+    }
     compileSdkVersion 22
     buildToolsVersion '21.1.2'
     defaultConfig {
         applicationId "com.leonardogandini.circuswatchfaces"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 15
-        versionName '1.0.2'
+        versionCode 14
+        versionName '1.0.1'
+        signingConfig signingConfigs.chiavewear
+
     }
     buildTypes {
         release {
@@ -17,6 +27,22 @@ android {
         }
     }
     productFlavors {
+        AdFree {
+            applicationId "com.leonardogandini.circuswatchfaces"
+            minSdkVersion 9
+            targetSdkVersion 22
+            versionCode 1
+            versionName '1'
+            signingConfig signingConfigs.chiavewear
+        }
+        AdDiBestia {
+            applicationId "com.leonardogandini.circuswatchfaces"
+            minSdkVersion 9
+            targetSdkVersion 22
+            versionCode 14
+            versionName '1.0.1'
+            signingConfig signingConfigs.chiavewear
+        }
     }
 }
 

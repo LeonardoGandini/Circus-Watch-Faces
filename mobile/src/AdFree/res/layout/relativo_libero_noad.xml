@@ -1,0 +1,94 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollViewLibera"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="false"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/relativolibero01"
+        android:fitsSystemWindows="true"
+        android:layout_height="fill_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.watch.lgandini.com.skyrimwatchfaces.smatoacty"
+        android:touchscreenBlocksFocus="false"
+        android:background="@color/background_material_light"
+        android:nestedScrollingEnabled="true">
+
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:id="@+id/logo"
+            android:src="@drawable/ic_launcher"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/spiega"
+            android:id="@+id/textView2"
+            android:textColor="#ff000000"
+            android:paddingTop="7dp"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/knowmore"
+            android:id="@+id/textView3"
+            android:textColor="#ffe8b800"
+            android:textSize="22dp"
+            android:layout_marginTop="26dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/leoname"
+            android:id="@+id/leobutton"
+            android:nestedScrollingEnabled="true"
+            android:onClick="buttonOnClick"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/robename"
+            android:id="@+id/robebutton"
+            android:nestedScrollingEnabled="true"
+            android:onClick="buttonOnClickroberta"
+            android:layout_below="@+id/leobutton"
+            android:layout_centerHorizontal="true" />
+
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/robebutton">
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+
+</ScrollView>
