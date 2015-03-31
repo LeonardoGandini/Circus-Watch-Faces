@@ -23,6 +23,11 @@ Discover their unique way to mark the time!
 
 All illustrations are hand made by Roberta Pagnoni: <a href="http://robertapagnoni.it">robertapagnoni.it</a>
 
+<img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundAcrobats.png"/>
+<img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundJuggler.png"/>
+<img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundEquilibrist.png"/>
+<img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundElephant.png"/>
+<img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundSeal.png"/>
 
 <table width="100%" border="0">
   <tbody>
