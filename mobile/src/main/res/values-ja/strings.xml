@@ -2,12 +2,11 @@
 <resources>
     <string name="app_name">サーカスのウォッチ フェイス</string>
     <string name="banner_ad_unit_id">ca-app-pub-8883827965457604/2801243541</string>
-    <string name="title_activity_circus_main_ancora">Circus Main</string>
-    <string name="spiega">このアプリはAndroid Wearのためのアプリで使用すればAndroid Wearのスマートウォッチが必要です。</string>
-    <string name="knowmore">Want to know more?</string>
+    <string name="spiega">このアプリは<b>Android Wear</b>のためのアプリです。使うにはAndroid Wearのスマートウォッチが必要です。\nRoberta Pagnoniのデザインとイラストを元に、Leonardo Gandiniがアプリを開発しました。</string>
+    <string name="knowmore">もっと知りたい？</string>
     <string name="leoname">レオナルド・ガンディー二</string>
     <string name="robename">ロベルタ・パニョーニ</string>
-    <string name="donatespiega">このアプリは１００％無料です！しかしボタンにクリックすれば</string>
+    <string name="donatespiega">このアプリは１００\％無料で使い続けられます！でもプロジェクトをサポートして頂ける場合は、寄付ボタンにタッチすることで、簡単に広告を消すことが出来ます。</string>
     <string name="donate">寄付する</string>
-    <string name="cheers">Thanks for supporting our work!!</string>
+    <string name="cheers">プロジェクトのサポートをありがとうございます。</string>
 </resources>

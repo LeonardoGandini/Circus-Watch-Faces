@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">サーカスのウォッチ フェイス</string>
-    <string name="acrobat_name">Circus Acrobats</string>
-    <string name="juggler_name">Circus Juggler</string>
-    <string name="equilibrist_name">Circus Equilibrist</string>
-    <string name="seal_name">Circus Seal</string>
-    <string name="elephant_name">Circus Elephant</string>
+    <string name="acrobat_name">サーカスの軽業師</string>
+    <string name="juggler_name">サーカスのジャグラー</string>
+    <string name="equilibrist_name">サーカスの綱渡り</string>
+    <string name="seal_name">サーカスのアザラシ</string>
+    <string name="elephant_name">サーカスのゾウ</string>
 </resources>
