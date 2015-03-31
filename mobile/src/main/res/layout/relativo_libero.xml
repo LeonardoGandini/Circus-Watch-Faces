@@ -85,10 +85,7 @@
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClick"
             android:layout_below="@+id/textView3"
-            android:layout_alignRight="@+id/logo"
-            android:layout_alignEnd="@+id/logo"
-            android:layout_marginRight="74dp"
-            android:layout_marginEnd="74dp" />
+            android:layout_centerHorizontal="true" />
 
 
         <Button
@@ -98,9 +95,8 @@
             android:id="@+id/robebutton"
             android:nestedScrollingEnabled="true"
             android:onClick="buttonOnClickroberta"
-            android:layout_alignTop="@+id/leobutton"
-            android:layout_alignRight="@+id/cheerstext"
-            android:layout_alignEnd="@+id/cheerstext" />
+            android:layout_below="@+id/leobutton"
+            android:layout_centerHorizontal="true" />
 
 
 
