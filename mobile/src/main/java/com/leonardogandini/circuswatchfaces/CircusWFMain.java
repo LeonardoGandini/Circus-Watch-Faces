@@ -29,7 +29,11 @@ public class CircusWFMain extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AdViewisIn();
+//        setContentView(R.layout.relativo_cattivita);
+//           /*Genera l'ad*/
+//        AdView mAdView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         String akiave = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqbichWrlW0mUt8FdQ";
         String akiaveprimo = "/aVZbBYrZ2sDwea3LT2cuwsEQZaNiYt2c1OJplM0tzceWF5F2sP4p/qir+EKfhSgo67eohuPHohdlbnzVnGr0Yjox0csxTz3b";
@@ -94,8 +98,6 @@ public class CircusWFMain extends Activity {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
-
-
 
   //  static final String payload = "fdsg4598khdsgfgsffsdgfdg";
 
@@ -163,15 +165,15 @@ public class CircusWFMain extends Activity {
     }
 
 public void updateUi() {
-    // update the car color to reflect premium status or lack thereof
-    setContentView(mIsPremium ? R.layout.relativo_libero : R.layout.relativo_cattivita);
+    // setContentView(mIsPremium ? R.layout.relativo_libero : R.layout.relativo_cattivita);
 
-    /*if (mIsPremium){
+    if (mIsPremium){
         setContentView(R.layout.relativo_libero);
+        //alert(getString(R.string.cheers));
     }
     else{
         AdViewisIn();
-    }*/
+    }
 
 
 }
