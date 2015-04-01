@@ -23,6 +23,8 @@ Discover their unique way to mark the time!
 
 All illustrations are hand made by Roberta Pagnoni: <a href="http://robertapagnoni.it">robertapagnoni.it</a>
 
+The app is free and can be downloaded from the <a href="https://play.google.com/store/apps/details?id=com.leonardogandini.circuswatchfaces">Google Play Store</a> and from the <a href="http://www.amazon.com/gp/product/B00VGXIUG6">Amazon App Store</a> 
+
 <img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundAcrobats.png"/>
 <img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundJuggler.png"/>
 <img width="100%" height="auto"src="http://robertapagnoni.it/circuswatchfaces/AmazonRoundEquilibrist.png"/>
@@ -47,4 +49,8 @@ All illustrations are hand made by Roberta Pagnoni: <a href="http://robertapagno
   </tbody>
 </table>
 
+<a href="https://play.google.com/store/apps/details?id=com.leonardogandini.circuswatchfaces">
+  <img alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+</a>
 <!--img src="http://robertapagnoni.it/circuswatchfaces/icon512.png"/-->
