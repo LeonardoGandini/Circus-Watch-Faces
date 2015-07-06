@@ -8,8 +8,8 @@ android {
         applicationId "com.leonardogandini.circuswatchfaces"
         minSdkVersion 20
         targetSdkVersion 22
-        versionCode 18
-        versionName '1.0.4'
+        versionCode 19
+        versionName '1.0.5'
     }
     buildTypes {
         release {

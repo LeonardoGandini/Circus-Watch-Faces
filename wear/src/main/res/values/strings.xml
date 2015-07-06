@@ -6,4 +6,9 @@
     <string name="equilibrist_name">Circus Equilibrist</string>
     <string name="seal_name">Circus Seal</string>
     <string name="elephant_name">Circus Elephant</string>
+    <string name="title_activity_digital_watch_face_wearable_config">
+        DigitalWatchFaceWearableConfigActivity
+    </string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
 </resources>
