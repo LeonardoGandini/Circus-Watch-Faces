@@ -35,17 +35,17 @@
                 android:resource="@drawable/acrobats_screen" />
 
             <!-- companion configuration activity -->
-            <meta-data
+            <!--meta-data
                 android:name=
                     "com.google.android.wearable.watchface.companionConfigurationAction"
                 android:value=
-                    "com.example.android.wearable.watchface.CONFIG_ANALOG" />
+                    "com.example.android.wearable.watchface.CONFIG_ANALOG" /-->
             <!-- wearable configuration activity -->
-            <meta-data
+            <!--meta-data
                 android:name=
                     "com.google.android.wearable.watchface.wearableConfigurationAction"
                 android:value=
-                    "com.example.android.wearable.watchface.CONFIG_ANALOG" />
+                    "com.example.android.wearable.watchface.CONFIG_ANALOG" /-->
 
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
